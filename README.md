@@ -43,18 +43,17 @@ Each sample ran for 100 iterations, recording the best accuracy and parameters a
 
 📈 Results:
 
-Sample	Best Accuracy (%)	Best SVM Parameters
-S1	85.67	Kernel: rbf, Nu: 0.06, Gamma: 0.032
-S2	83.33	Kernel: poly, Nu: 0.24, Gamma: 0.176
-S3	87.33	Kernel: rbf, Nu: 0.24, Gamma: 0.058
-S4	89.33	Kernel: rbf, Nu: 0.28, Gamma: 0.017
-S5	89.67	Kernel: rbf, Nu: 0.1, Gamma: 0.058
-S6	90.00	Kernel: rbf, Nu: 0.39, Gamma: 0.046 ✅
-S7	84.33	Kernel: rbf, Nu: 0.08, Gamma: 0.057
-S8	86.33	Kernel: poly, Nu: 0.33, Gamma: 0.008
-S9	87.00	Kernel: poly, Nu: 0.41, Gamma: 0.868
-S10	89.33	Kernel: rbf, Nu: 0.46, Gamma: 0.066
-👉 Best Sample: S6 with 90.00% accuracy
+  Sample  Best Accuracy                   Best SVM Parameters
+0     S1          85.67   Kernel: rbf, Nu: 0.06, Gamma: 0.032
+1     S2          83.33  Kernel: poly, Nu: 0.24, Gamma: 0.176
+2     S3          87.33   Kernel: rbf, Nu: 0.24, Gamma: 0.058
+3     S4          89.33   Kernel: rbf, Nu: 0.28, Gamma: 0.017
+4     S5          89.67    Kernel: rbf, Nu: 0.1, Gamma: 0.058
+5     S6          90.00   Kernel: rbf, Nu: 0.39, Gamma: 0.046
+6     S7          84.33   Kernel: rbf, Nu: 0.08, Gamma: 0.057
+7     S8          86.33  Kernel: poly, Nu: 0.33, Gamma: 0.008
+8     S9          87.00  Kernel: poly, Nu: 0.41, Gamma: 0.868
+9    S10          89.33   Kernel: rbf, Nu: 0.46, Gamma: 0.066
 
 📊 Convergence Plot for Best Sample (S6):
 
