@@ -1,38 +1,53 @@
 # Parameter-Optimization
-# 🔍 SVM Hyperparameter Optimization using NuSVC
 
-This project focuses on optimizing hyperparameters for the *Nu-Support Vector Classification (NuSVC)* algorithm using the scikit-learn library. The goal is to evaluate the effect of various SVM kernel types and tuning parameters (Nu, Gamma) on classification performance using a synthetic multi-class dataset.
+## 🧠 Overview:
+This project explores the effectiveness of Nu-Support Vector Machines (NuSVC) on a synthetic multi-class dataset. Through randomized hyperparameter tuning across 10 different shuffled samples, we aim to identify optimal configurations for achieving high classification accuracy.
 
----
-
-## 🧠 Problem Statement
-
-The Support Vector Machine (SVM) is a powerful supervised learning algorithm. This experiment uses *NuSVC*, a variant that allows controlling the number of support vectors and margin errors via the nu parameter. The challenge lies in finding the right combination of kernel, nu, and gamma values that yield the best accuracy.
+Each trial evaluates 100 random combinations of kernel, nu, and gamma, logging the best performing configuration for each sample. The convergence of accuracy over iterations is also visualized for the top sample.
 
 ---
 
-## 🛠 Dataset Overview
+## 📚 Dataset Overview
 
-A synthetic dataset was generated using make_classification with the following characteristics:
+A synthetic dataset was generated using make_classification() from scikit-learn with the following properties:
 
-- *Samples:* 1000  
-- *Features:* 20 (10 informative, 5 redundant)  
-- *Classes:* 3  
-- *Class separation:* Moderate (1.2)  
-- *Split:* 70% training / 30% testing  
-- *Shuffling:* Random seed varied for 10 samples
+Samples: 1000
+
+Features: 20 (10 informative, 5 redundant)
+
+Classes: 3
+
+Class Separation: Moderate (class_sep = 1.2)
 
 ---
 
-## ⚙ Experiment Setup
+## 🔍 Class Distribution:
+Class 2: 335 samples
 
-- *Classifier:* NuSVC (from sklearn.svm)
-- *Kernel types tested:* linear, poly, rbf, sigmoid
-- *Hyperparameters:*
-  - nu: Randomly chosen from [0.01, 0.5]
-  - gamma: Randomly chosen from [0.001, 1] (except for linear kernel where it's set to 'scale')
-- *Iterations:* 100 per sample
-- *Evaluation metric:* Accuracy on test set
+Class 1: 334 samples
+
+Class 0: 331 samples
+
+The dataset is balanced, ensuring fairness in evaluation across all classes.
+
+---
+
+## 🔧 Methodology:
+Shuffling & Sampling: 10 unique datasets (S1 to S10) were created by shuffling with different random seeds.
+
+Train/Test Split: Each sample was split 70:30 for training and testing respectively.
+
+Model: NuSVC from scikit-learn was used.
+
+Hyperparameters Tuned Randomly:
+
+Kernel: linear, poly, rbf, sigmoid
+
+Nu: Random value in [0.01, 0.5]
+
+Gamma: Random value in [0.001, 1] or 'scale' for linear
+
+Each sample ran for 100 iterations, recording the best accuracy and parameters achieved.
 
 ---
 
@@ -61,15 +76,7 @@ A synthetic dataset was generated using make_classification with the following c
   - Kernel: rbf  
   - Nu: 0.39  
   - Gamma: 0.046
-
----
-
-## 📈 Convergence Plot
-
-A convergence plot showing accuracy progression over 100 iterations was created for the best sample (S6). This helps visualize how the algorithm improved during the search process.
-
-- File saved as: convergence_plot.png
-
+    
 ---
 
 ## 📦 Requirements
@@ -84,3 +91,4 @@ Install dependencies using:
 
 ```bash
 pip install scikit-learn numpy pandas matplotlib
+
